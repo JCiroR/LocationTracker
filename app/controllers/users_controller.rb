@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
-    before_action :require_user
+    before_action :require_user, :only => [:index]
+    def new
+        @user = User.new
+    end
 
     def index
         @points = current_user.points

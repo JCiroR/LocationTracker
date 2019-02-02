@@ -6,8 +6,11 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module ST0263Project1
+module ST0263Project01
   class Application < Rails::Application
+    if ENV['DOCKERIZED'] == 'true'
+      config.web_console.whitelisted_ips = ENV['DOCKER_HOST_IP']
+    end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.2
 
