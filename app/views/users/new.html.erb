@@ -5,6 +5,7 @@
     <h1 class="title">Sign up</h1>
 
     <%= form_for(@user) do |f| %>
+      <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
       <%= f.text_field :user_name, :placeholder => "User name" %>
       <%= f.password_field :password, :placeholder => "Password" %>
       <%= f.submit "Create an account", class: "btn-submit" %>
