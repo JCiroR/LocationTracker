@@ -12,7 +12,14 @@
  *
  *= require_tree .
  *= require_self
+ *= require leaflet
  */
+
+ #mapid { 
+   height: 300px; 
+   width: 60%;  
+   margin: 0 auto 0 auto;
+}
 
  html, body {
     background: #fff;
@@ -41,10 +48,11 @@
   }
   
   .header li:first-child {
-   margin-left: 70vh;
+   margin-left: 80vw;
   }
 
   .header li {
+    margin-left: 1vh;
     display: inline;
    }
   
@@ -133,6 +141,14 @@
   .photo-info p {
     margin: 0;
   }
+
+  /* TITLES */
+
+  .title {
+    text-align:center;
+    text-transform: capitalize;
+    font-size: 25px;
+  }
   
   /* FORM PAGES */
   
@@ -142,7 +158,7 @@
     margin: 0 auto 10px;
     padding: 20px 0 10px 0;
     font-size: 16px;
-    width: 300px;
+    width: 30vw;
   }
   
   input[type=text],
@@ -152,19 +168,29 @@
     width: 100%;
     border: 1px solid #E6E6E6;
     border-radius: 0px; 
-    height: 60px;
+    height: 25px;
     margin: 6px auto;
     text-indent: 10px;
   }
   
   .btn-submit {
     color: #FFFFFF;
-    font-size: 18px;
-    text-transform: uppercase;
-    background: #c91717;
+    font-size: 15px;
+    text-transform: none;
+    background: #ff3333;
     padding: 10px 20px;
     border: 0;
     margin-top: 6px;
+  }
+
+  .btn-record {
+    color: #FFFFFF;
+    font-size: 12px;
+    text-transform: none;
+    background: #ff3333;
+    padding: 5px 17px;
+    border: 0;
+    margin-left: 20%
   }
     
   /*  RESPONSIVE */

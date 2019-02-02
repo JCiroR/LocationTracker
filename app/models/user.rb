@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    has_many :points
+    
     has_secure_password
     validates :user_name, presence: true,
     length: { minimum: 3 }

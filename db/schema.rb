@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_172708) do
+ActiveRecord::Schema.define(version: 2019_02_01_210234) do
+
+  create_table "points", force: :cascade do |t|
+    t.decimal "lat", precision: 10, scale: 6
+    t.decimal "lon", precision: 10, scale: 6
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_points_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "user_name"
