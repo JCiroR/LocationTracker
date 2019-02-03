@@ -1,7 +1,7 @@
 # Project 01 - ST0263
 ## Juan Manuel Ciro Restrepo - jcirore@eafit.edu.co
 
-Small web application that allows users to store geolocation of places they've visited.
+Small web application that allows users to store geolocations of places they've visited.
 
 ## Deployment
 To deploy the app you first need to install `docker-compose` from https://docs.docker.com/compose/install/. 
