@@ -1,24 +1,19 @@
-# README
+# Project 01 - ST0263
+## Juan Manuel Ciro Restrepo - jcirore@eafit.edu.co
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small web application that allows users to store geolocation of places they've visited.
 
-Things you may want to cover:
+## Deployment
+To deploy the app you first need to install `docker-compose` from https://docs.docker.com/compose/install/. 
+The app will be hosted on `port: 80`.
 
-* Ruby version
+1. Clone the repository 
 
-* System dependencies
+       $ git clone 'https://github.com/JCiroR/ST0263-Project-01/'
 
-* Configuration
+2. Build and run the app with Docker
+      
+       $ docker-compose build
+       $ docker-compose up
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+  
