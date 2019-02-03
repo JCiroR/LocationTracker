@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-    protect_from_forgery unless: -> {request.format.json?}
+    skip_forgery_protection
     helper_method :current_user 
     helper_method :require_user
 
