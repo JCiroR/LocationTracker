@@ -4,7 +4,7 @@
 Small web application that allows users to store geolocations of places they've visited.
 
 ## Deployment
-To deploy the app you first need to install `docker-compose` from https://docs.docker.com/compose/install/. 
+To deploy the app you only need to install `docker-compose` from https://docs.docker.com/compose/install/. 
 The app will be hosted on `port: 80`.
 
 1. Clone the repository 
