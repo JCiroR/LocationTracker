@@ -6,17 +6,6 @@ class UsersController < ApplicationController
     end
 
     def index
-        @points = current_user.points
-        @lat = 6.2442
-        @lon = -75.5812
-        if @points.count > 0 
-            @points.each do |p|
-              @lat += p[:lat]
-              @lon += p[:lon]
-            end
-            @lat /= (@points.count + 1)
-            @lon /= (@points.count + 1)
-        end
     end
 
     def create 

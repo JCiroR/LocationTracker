@@ -10,15 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_01_210234) do
+ActiveRecord::Schema.define(version: 2019_02_09_162434) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "points", force: :cascade do |t|
     t.decimal "lat", precision: 10, scale: 6
     t.decimal "lon", precision: 10, scale: 6
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_points_on_user_id"
+    t.bigint "route_id"
+    t.index ["route_id"], name: "index_points_on_route_id"
+  end
+
+  create_table "routes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_routes_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -28,4 +39,6 @@ ActiveRecord::Schema.define(version: 2019_02_01_210234) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "points", "routes"
+  add_foreign_key "routes", "users"
 end

@@ -1,20 +1,37 @@
-<div class="">
-  <div class="">
 
-  
-    <%= form_for [current_user, current_user.points.build] do |f| %>
-      <%= f.hidden_field :lat %>
-      <br>
-      <%= f.hidden_field :lon %>
-    <% end %>
-    <button onclick="getLocation()" class="btn-record">Record location</button>
-  </div>
+
+<h1 class="title"> Route: <%= @route.name %> </h1>
+<div class="instructions">
+    <p>
+        Use the 'Start' and 'Stop' buttons to control when 
+        to record your locations.
+    <p>
 </div>
 
-<p id="result"></p>   
+<%= form_for [@user, @route, @route.points.build] do |f| %>
+    <%= f.hidden_field :lat %>
+    <%= f.hidden_field :lon %>
+<% end %>
+<button onclick="startTracking()" style="margin-left: 20%">Start</button>
+<button onclick="stopTracking()">Stop </button>
+<p></p>
+<%= link_to 'Back', users_path , class: "btn-record"  %>
+
+<p id="result" class="instructions"></p>   
+
 
 <script>
     var x = document.getElementById("result");
+    var tracker;
+
+    function startTracking() {
+        tracker = setInterval(getLocation, 5000);
+    }
+
+    function stopTracking() {
+        clearInterval(tracker);
+    }
+
     function getLocation() {
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(showPosition, showError);
@@ -27,6 +44,7 @@
         document.getElementById("point_lat").value = position.coords.latitude;
         document.getElementById("point_lon").value = position.coords.longitude;
         document.getElementById("new_point").submit();
+        x.innerHTML = "Last location: (" + position.coords.latitude + ", " + position.coords.longitude + ")";
     }
 
     function showError(error) {
@@ -46,5 +64,3 @@
         }
     }
 </script>
-
-

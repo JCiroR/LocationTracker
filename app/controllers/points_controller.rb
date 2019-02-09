@@ -3,12 +3,13 @@ class PointsController < ApplicationController
     end
 
     def index
+        @user = User.find(params[:user_id])
+        @route = @user.routes.find(params[:route_id])
     end
 
     def create
-        @user = User.find(params[:user_id])
-        @point = @user.points.create(point_params)
-        redirect_to users_path(@user)
+        @route = User.find(params[:user_id]).routes.find(params[:route_id])
+        @point = @route.points.create(point_params)
     end
 
     private

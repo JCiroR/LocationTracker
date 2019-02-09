@@ -1,18 +1,16 @@
-<h1 class="title">Saved locations</h1>
 
-<div id="mapid"></div>
+<div class="wrapper">
+    <h1 class ="title">My routes</h1>
+    <div class="table">
+        <div class="row header">
+            <div class="cell"> Route name </div>
+            <div class="cell"> Number of points </div>
+            <div class="cell">  </div>
+        </div>
+        <%= render current_user.routes %>
+    </div>
+</div>
 
-<script>
-    var map = L.map('mapid').setView([<%= @lat %>, <%= @lon %>], 13);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
-
-    <% @points.each_with_index do |p, index| %>
-        L.marker([<%= p.lat%>, <%= p.lon %>]).addTo(map).bindPopup('Location <%= index + 1 %>');
-    <% end %>
-</script>
-
-<%= render "points/new" %>
-
+<h1 class ="title">Create new route</h1>
+<%= render 'routes/form' %>
+    

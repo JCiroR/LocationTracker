@@ -1,0 +1,16 @@
+    <div class="row">
+      <div class="cell" data-title="Route name">
+        <%= route.name %>
+      </div>
+      <div class="cell" data-title="Number of points">
+          <%= route.points.count %>
+      </div>
+      <div class="cell" >
+        <%= link_to 'Show', user_route_path(route.user, route)%>
+         <%= link_to 'Record',  user_route_points_path(route.user, route)%>
+                     <%= link_to 'Delete', [route.user, route], method: :delete, 
+            data: { confirm: 'This will delete the route and all its points' } %>
+      </div>
+    </div>
+
+

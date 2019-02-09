@@ -1,0 +1,6 @@
+<div class="route-form">
+  <%= form_with(model: [current_user, current_user.routes.build], local: true) do |form| %>
+      <%= form.text_field :name, :placeholder => "Name" %> 
+      <%= form.submit "Create", class: "route-submit" %>
+  <% end %>
+</div>
