@@ -15,5 +15,7 @@ The app will be hosted on `port: 80`.
       
        $ docker-compose build
        $ docker-compose up
+       $ docker-compose run web rake db:create
+       $ docker-compose run web rake db:schema:load
 
   
