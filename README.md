@@ -1,4 +1,4 @@
-# Project 01 - ST0263
+# Location Tracker
 ## Juan Manuel Ciro Restrepo - jcirore@eafit.edu.co
 
 Small web application that allows users to store geolocations of routes they've traveled.
